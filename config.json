@@ -1,0 +1,69 @@
+{
+  "sql_checks": [
+    {
+      "name": "Example SQL Check",
+      "connection_string": "DRIVER={ODBC Driver 18 for SQL Server};SERVER=myserver.database.windows.net;DATABASE=mydb;Authentication=ActiveDirectoryMsi",
+      "query": "SELECT COUNT(*) FROM my_table WHERE status = 'active'",
+      "expected_min_rows": 1
+    }
+  ],
+  "azure_function_checks": [
+    {
+      "name": "Example Function Check",
+      "function_url": "https://myfunctionapp.azurewebsites.net/api/myfunction",
+      "function_key": "YOUR_FUNCTION_KEY",
+      "expected_status_code": 200
+    }
+  ],
+  "app_insights_checks": [
+    {
+      "name": "Example App Insights Check",
+      "app_id": "YOUR_APP_INSIGHTS_APP_ID",
+      "api_key": "YOUR_APP_INSIGHTS_API_KEY",
+      "max_error_count": 0
+    }
+  ],
+  "storage_queue_checks": [
+    {
+      "name": "Example Queue Check",
+      "connection_string": "DefaultEndpointsProtocol=https;AccountName=myaccount;AccountKey=YOUR_ACCOUNT_KEY;EndpointSuffix=core.windows.net",
+      "queue_name": "my-queue",
+      "max_message_count": 100
+    }
+  ],
+  "ftp_checks": [
+    {
+      "name": "Example FTP Check",
+      "host": "ftp.example.com",
+      "port": 21,
+      "username": "ftpuser",
+      "password": "YOUR_FTP_PASSWORD",
+      "path": "/uploads",
+      "expected_min_files": 1
+    }
+  ],
+  "vm_log_checks": [
+    {
+      "name": "Example VM Log Check",
+      "hostname": "my-vm.azure.com",
+      "port": 22,
+      "username": "azureuser",
+      "key_file": "/path/to/private_key",
+      "known_hosts_file": "/path/to/known_hosts",
+      "log_path": "/var/log/myapp/app.log",
+      "search_text": "ERROR",
+      "expect_text_absent": true
+    }
+  ],
+  "vm_process_checks": [
+    {
+      "name": "Example VM Process Check",
+      "hostname": "my-vm.azure.com",
+      "port": 22,
+      "username": "azureuser",
+      "key_file": "/path/to/private_key",
+      "known_hosts_file": "/path/to/known_hosts",
+      "process_name": "nginx"
+    }
+  ]
+}
