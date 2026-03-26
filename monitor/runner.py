@@ -113,6 +113,10 @@ def run_checks(config: dict[str, Any]) -> list[CheckResult]:
                 key_file=cfg.get("key_file"),
                 known_hosts_file=cfg.get("known_hosts_file"),
                 process_name=cfg["process_name"],
+                protocol=cfg.get("protocol", "ssh"),
+                screenshot_path=cfg.get("screenshot_path"),
+                rdp_launch_wait_seconds=cfg.get("rdp_launch_wait_seconds", 6),
+                close_rdp_on_finish=cfg.get("close_rdp_on_finish", True),
             )
         )
 

@@ -64,6 +64,17 @@
       "key_file": "/path/to/private_key",
       "known_hosts_file": "/path/to/known_hosts",
       "process_name": "nginx"
+    },
+    {
+      "name": "Example VM Process Check (RDP)",
+      "hostname": "my-windows-vm.azure.com",
+      "username": "CONTOSO\\monitor-user",
+      "password": "YOUR_PASSWORD",
+      "process_name": "MyApp.exe",
+      "protocol": "rdp",
+      "screenshot_path": "artifacts/rdp-check.png",
+      "rdp_launch_wait_seconds": 8,
+      "close_rdp_on_finish": true
     }
   ]
 }
